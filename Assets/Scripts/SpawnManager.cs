@@ -14,9 +14,10 @@ public class SpawnManager : MonoBehaviour
     private Vector3 spawnPosBee = new Vector3(5, 3f, 1);
     private Vector3 spawnPosAcorn = new Vector3(5, 3, 1);
     private float startDelay = 2;
+    private float startDelayObstacle = 9;
     private float startDelayRock = 4;
     private float startDelayTree = 7;
-    private float startDelayFinish = 116;
+    private float startDelayFinish = 30;
     private float repeatRateObstacle = 3.3f;
     private float repeatRateObstacleRock = 5.8f;
     private float repeatRateObstacleTree = 9.2f;
@@ -31,7 +32,7 @@ public class SpawnManager : MonoBehaviour
         repeatRateObstacleTree = Random.Range(8.6f, 9.8f);
         repeatRateAcorn = Random.Range(2.3f, 3.3f);
         playerControllerScript = GameObject.Find("pigHero").GetComponent<PlayerController>();
-        InvokeRepeating("SpawnObstacle", startDelay, repeatRateObstacle);
+        InvokeRepeating("SpawnObstacle", startDelayObstacle, repeatRateObstacle);
         InvokeRepeating("SpawnObstacleRock", startDelayRock, repeatRateObstacleRock);
         InvokeRepeating("SpawnObstacleTree", startDelayTree, repeatRateObstacleTree);
         InvokeRepeating("SpawnArcon", startDelay, repeatRateAcorn);

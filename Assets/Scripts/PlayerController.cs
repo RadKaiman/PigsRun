@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody playerRb;
-    private float jumpForce = 15;
+    private float jumpForce = 17;
     public float gravityModifier;
     public bool gameOver = false;
     public bool win = false;
@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        gravityModifier = 6;
+        gravityModifier = 10;
         playerRb = GetComponent<Rigidbody>();
         Physics.gravity *= gravityModifier;
         playerAudio = GetComponent<AudioSource>();
@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Space))
         {
-            playerRb.AddForce(Vector3.up * 6);
+            playerRb.AddForce(Vector3.up * 3);
         }
     }
 
