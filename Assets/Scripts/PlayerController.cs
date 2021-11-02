@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody playerRb;
-    private float jumpForce = 17;
+    private float jumpForce = 20;
     public float gravityModifier;
     public bool gameOver = false;
     public bool win = false;
@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        gravityModifier = 10;
+        gravityModifier = 9;
         playerRb = GetComponent<Rigidbody>();
         Physics.gravity *= gravityModifier;
         playerAudio = GetComponent<AudioSource>();
@@ -52,10 +52,11 @@ public class PlayerController : MonoBehaviour
             dirtParticle.Stop();
             playerAudio.PlayOneShot(jumpSound, 1.0f);
         }
-        if (Input.GetKey(KeyCode.Space))
-        {
-            playerRb.AddForce(Vector3.up * 3);
-        }
+
+        //if (Input.GetKey(KeyCode.Space))
+        //{
+        //    playerRb.AddForce(Vector3.up * 3);
+        //}
     }
 
     private void OnCollisionEnter(Collision collision)
