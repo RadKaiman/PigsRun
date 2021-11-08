@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5261562547229783431}
   - component: {fileID: 281272175574336612}
   - component: {fileID: 2710181687138946366}
+  - component: {fileID: 2548233616932874974}
   m_Layer: 0
   m_Name: Rock_Obstacle
   m_TagString: Obstacle
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 5909900504045900882}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -6.145804, y: 0.55, z: 0.30944464}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -57,10 +58,11 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: aa6302ab3d82c8344b308872da17aeeb, type: 3}
+  - {fileID: 2100000, guid: 37524ae4594222f4f8acd7b76234f79a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -81,6 +83,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &281272175574336612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,6 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d2324c93393c9f44becec2069ad6ffd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMoveLeft: 0
 --- !u!65 &2710181687138946366
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -106,3 +110,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.3, y: 2, z: 2.3}
   m_Center: {x: 0, y: -0.098076105, z: 0}
+--- !u!54 &2548233616932874974
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5909900504045900882}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

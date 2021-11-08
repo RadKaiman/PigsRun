@@ -101,6 +101,7 @@ public class PlayerController : MonoBehaviour
     public void Restart()
     {
         Physics.gravity /= gravityModifier;
+        Time.timeScale = 1;
         SceneManager.LoadScene(1);
     }
 
@@ -110,21 +111,25 @@ public class PlayerController : MonoBehaviour
         {
             pause = false;
             Cursor.lockState = CursorLockMode.Locked;
-            pausePanel.SetActive(false);         
-            FindObjectOfType<MoveLeft>().pauseMoveLeft = false;
-            //FindObjectOfType<MoveRight>().pauseMoveRight = false;
-            FindObjectOfType<SpawnManager>().pauseSpawn = false;
-            FindObjectOfType<RepeatBackground>().pauseBack = false;
+            pausePanel.SetActive(false);
+            //FindObjectOfType<MoveLeft>().pauseMoveLeft = false;
+            ////FindObjectOfType<MoveRight>().pauseMoveRight = false;
+            //FindObjectOfType<SpawnManager>().pauseSpawn = false;
+            //FindObjectOfType<RepeatBackground>().pauseBack = false;
+
+            Time.timeScale = 1;
         }
         else
         {
             pause = true;
             Cursor.lockState = CursorLockMode.None;
             pausePanel.SetActive(true);
-            FindObjectOfType<MoveLeft>().pauseMoveLeft = true;
-            //FindObjectOfType<MoveRight>().pauseMoveRight = true;
-            FindObjectOfType<SpawnManager>().pauseSpawn = true;
-            FindObjectOfType<RepeatBackground>().pauseBack = true;
+            //FindObjectOfType<MoveLeft>().pauseMoveLeft = true;
+            ////FindObjectOfType<MoveRight>().pauseMoveRight = true;
+            //FindObjectOfType<SpawnManager>().pauseSpawn = true;
+            //FindObjectOfType<RepeatBackground>().pauseBack = true;
+
+            Time.timeScale = 0.5f;
         }
     }
 }
